@@ -1,0 +1,544 @@
+@import url('../css/fonts.css');
+
+/************************ CSS classes ************************/
+:root{
+    /* Theme color */
+    --text-gray: #3f4954;
+    --text-light: #686666da;
+    --bg-color: #0f0f0f;
+    --white: #ffffff;
+    --midnight: #104f55;
+
+    /* Gradient color */
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    /* Theme font family*/
+    --Abel: 'Abel', 'Itim', 'Patrick Hand', cursive;
+    --Anton: 'Anton', 'Itim', 'Patrick Hand', cursive;
+    --Josefin: 'Josefin', 'Itim', 'Patrick Hand', cursive;
+    --Lexend: 'Lexend', 'Itim', 'Patrick Hand', cursive;
+    --Livvic: 'Livvic', 'Itim', 'Patrick Hand', cursive;
+}
+
+body{
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+/************************* STYLING FOR THE CONTAINER **************************/
+.full-container{
+    background-color: wheat;
+    width: 70%;
+    min-height: 800px;
+    margin: auto;
+    border-radius: 2px;
+}
+
+.riborn{
+    background-color: wheat;
+    width: 100%;
+    height: 40px;
+}
+
+/*************************** STYLING FOR THE NAVIGATION *************************/
+nav{
+    min-height: 80px;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+nav .site-title{
+    font-size: 20px;
+    display: block;
+    /* color: var(--text-gray); */
+    color: var(--text-light);
+    font-family: 'Josefin', cursive;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+nav .site-title h6{
+    position: relative;
+    margin-top: -25px;
+    margin-left: 46px;
+    color: var(--text-light);
+}
+
+nav .nav-menu{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-items{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 40px;
+    padding-right: 65px;
+    text-align: center;
+}
+
+.nav-items .nav-links{
+    padding: 10px 20px;
+    font-size: 20px;
+    position: relative;
+    text-decoration: none;
+    color: var(--text-light);
+    font-family: var(--Livvic);
+    font-weight: bold;
+}
+
+.nav-items .nav-links:hover{
+    color:  #a1c4cf;
+    transition-duration: 0.3s;
+}
+
+
+/* Styling for the Contact Icon */
+.social-media{
+    padding-top: 45px;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.social-media a{
+    text-decoration: none;
+    padding-left: 8px;
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.social-media a:hover{
+    color:  #a1c4cf;
+    transition-duration: 0.3s;
+}
+
+/* Toggle icon styling*/
+.icon-container {
+    display: none;
+    cursor: pointer;
+    margin-top: 35px;
+    height: 32px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: var(--text-light);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.show-nav-1{display: initial;}
+
+.show-nav-2 {display:none;}
+
+
+
+/************************** NAVIGATION RESPONSIVENESS USING MEDIA QUERIES *************************/
+@media screen and (max-width:930px){    /***Width of 930 pixels***/
+    .site-title{
+        padding: 0;
+    }
+
+    .nav-items{
+        display: inline-block;
+        padding: 0px;
+        margin-top: 25px;
+    }
+
+    .social-media{
+        padding-top: 42px;
+    }
+
+}
+
+@media screen and (max-width: 660px){  /***Width of 660 pixels***/
+
+    .social-media{
+        display: grid;
+        margin-top: -30px;
+    }
+
+}
+
+@media screen and (max-width: 586px){  /***Width of 586 pixels***/
+
+    .nav-items{
+        display: none;
+    }
+
+    .icon-container{
+        display: inline-block;
+    }
+
+}
+
+@media screen and (max-width: 450px){  /***Width of 450 pixels***/
+    .nav-menu{
+        flex-direction: column;
+    }
+
+    .site-title{
+        width: 180px;
+        padding: 0px;
+        margin: auto;
+    }
+
+    .site-title h2{
+        text-align: center;
+    }
+
+    .icon-container{
+        margin-left: 40%;
+        width: 30px;
+        height: 25px;
+        margin: auto;
+        margin-bottom: 11px;
+        margin-top: -12px;
+    }
+
+    .social-media{
+        display: inline-flex;
+        padding-top: 6px;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-media a{
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 22px;
+    }
+
+    .nav-items{
+        /* display: block; */
+        width: 180px;
+        margin: auto;
+        margin-bottom: 5px;
+        padding: 0px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 330px){  /***Width of 330 pixels***/
+
+    .site-title{
+        width: 180px;
+        padding: 0px;
+        margin: auto;
+    }
+
+    .site-title h2{
+        text-align: center;
+    }
+
+    .icon-container{
+        display:block;
+        width: 30px;
+        height: 25px;
+        margin: auto;
+        margin-bottom: 5px;
+        margin-top: -6px;
+    }
+
+    .nav-items{
+        /* display: block; */
+        width: 180px;
+        height: auto;
+        margin: auto;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .social-media{
+        display: inline-flex;
+        padding-top: 6px;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-media a{
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 22px;
+    }
+
+}
+
+@media screen and (max-width: 270px){  /***Width of 270 pixels***/
+
+
+}
+
+/****************************** STYLING FOR THE MAIN CONTENT & SEARCH RESULTS *****************************/
+main{
+    width: 97%;
+    min-height: 650px;
+    margin: auto;
+}
+
+.head{
+    width: 190px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: auto;
+    text-align: center;
+    font-family: var(--Josefin);
+    font-size: 19px;
+    color: var(--text-gray);
+}
+
+/* Styling for the input field (Search Field) */
+.search-container{
+    margin: auto;
+    margin-top: 5px;
+    width: 50%;
+    background-color: rgb(238, 229, 229);
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.filter{
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: var(--Livvic);
+    text-transform: capitalize;
+    color: var(--text-gray);
+    border-style: none;
+    background-color: rgb(218, 218, 218);
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+}
+
+.filter:hover{
+    background-color: rgb(247, 242, 242);
+    transition-duration: 0.5s;
+}
+
+/* Styling for the results Container */
+#post-container{
+    width: 100%;
+    min-height: 350px;
+    margin: 40px 0;
+    border-radius: 4px;
+    display: grid;
+    /* grid-template-columns: 24.2% 24.2% 24.2%; */
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-rows: minmax(100px, auto);
+    gap: 10px;
+    background-color: rgb(247, 231, 202);
+}
+
+.movie{
+    width: 250px;
+    min-height: 300px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie img{
+    width: 100%;
+    max-width: 105%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.movie-info{
+    width: 100%;
+    height: 120px;
+    background-color: rgb(202, 198, 198);
+    margin-top: -19.8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-info h3{
+    width: 57%;
+    background-color: white;
+    margin-left: 3px;
+    margin-top: 20px;
+    font-family: var(--Abel);
+    overflow-y: auto;
+}
+
+.movie-info a{
+    width: 35%;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 3px;
+    background-color: wheat;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--text-gray);
+    font-weight: bold;
+    font-family: var(--Abel);
+}
+
+/* Styling for the Loader */
+.loader{
+    width: 60px;
+    margin: auto;
+    margin-bottom: 25px;
+    display: flex;
+    transition: opacity 0.3px ease-in;
+    opacity: 0;
+}
+
+.loader.show{
+    opacity: 1;
+}
+
+.circle{
+    background-color:grey;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    animation: bounce 0.5s ease-in infinite;
+}
+
+.circle:nth-of-type(2){
+    animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3){
+    animation-delay: 0.2s;
+}
+
+@keyframes bounce{
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+/***************************** MAIN RESPONSIVENESS USING MEDIA QUERIES *****************************/
+
+@media screen and (max-width:1330px){}
+
+@media screen and (max-width: 700px){
+    .search-container .filter{
+        padding: 0px;
+        width: 100%;
+        height: 40px;
+        padding-left: 5px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .movie{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 370px){
+
+    #post-container{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .head{
+        font-size: 15px;
+        width: 150px;
+        transition: 0.2s;
+    }
+
+    .filter{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .movie{
+        width: 160px;
+    }
+
+    nav .nav-menu{
+        display: block;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    nav .site-title{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .movie-info h3{
+        font-size: 15px;
+    }
+
+    .movie-info a{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 260px){
+    nav .site-title{
+        font-size: 18px;
+    }
+}
+
+/********************************* STYLING FOR THE FOOTER AREA **********************************/
+footer{
+    min-height: 100px;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+footer h2{
+    margin-top: 35px;
+    text-align: center;
+    font-family: var(--Lexend);
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+@media screen and (max-width: 460px){
+    footer h2{
+        font-size: 15px;
+    }
+}
